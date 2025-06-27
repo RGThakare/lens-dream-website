@@ -25,37 +25,37 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-black/90 backdrop-blur-sm' : 'bg-transparent'
+      scrolled ? 'bg-stone-50/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-white tracking-wide">
-            LENS<span className="text-amber-400">ART</span>
+          <div className="text-2xl font-light text-stone-800 tracking-wider">
+            Wedding<span className="font-medium">Lens</span>
           </div>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-white hover:text-amber-400 transition-colors duration-200"
+              className="text-stone-700 hover:text-stone-900 transition-colors duration-200 font-light"
             >
               Home
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
-              className="text-white hover:text-amber-400 transition-colors duration-200"
+              className="text-stone-700 hover:text-stone-900 transition-colors duration-200 font-light"
             >
               Portfolio
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-white hover:text-amber-400 transition-colors duration-200"
+              className="text-stone-700 hover:text-stone-900 transition-colors duration-200 font-light"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-white hover:text-amber-400 transition-colors duration-200"
+              className="text-stone-700 hover:text-stone-900 transition-colors duration-200 font-light"
             >
               Contact
             </button>
@@ -64,7 +64,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white"
+            className="md:hidden text-stone-800"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -72,29 +72,29 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-black/95 backdrop-blur-sm rounded-lg mt-2 py-4">
+          <div className="md:hidden bg-stone-50/95 backdrop-blur-sm rounded-lg mt-2 py-4">
             <div className="flex flex-col space-y-4 px-4">
               <button 
                 onClick={() => scrollToSection('home')}
-                className="text-white hover:text-amber-400 transition-colors duration-200 text-left"
+                className="text-stone-700 hover:text-stone-900 transition-colors duration-200 text-left font-light"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
-                className="text-white hover:text-amber-400 transition-colors duration-200 text-left"
+                className="text-stone-700 hover:text-stone-900 transition-colors duration-200 text-left font-light"
               >
                 Portfolio
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
-                className="text-white hover:text-amber-400 transition-colors duration-200 text-left"
+                className="text-stone-700 hover:text-stone-900 transition-colors duration-200 text-left font-light"
               >
                 About
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="text-white hover:text-amber-400 transition-colors duration-200 text-left"
+                className="text-stone-700 hover:text-stone-900 transition-colors duration-200 text-left font-light"
               >
                 Contact
               </button>
