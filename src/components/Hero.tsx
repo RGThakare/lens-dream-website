@@ -2,8 +2,8 @@
 import React from 'react';
 
 const Hero = () => {
-  const scrollToPortfolio = () => {
-    const element = document.getElementById('portfolio');
+  const scrollToServices = () => {
+    const element = document.getElementById('services');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -32,11 +32,11 @@ const Hero = () => {
         </p>
         
         <button 
-          onClick={scrollToPortfolio}
+          onClick={scrollToServices}
           className="bg-stone-700 text-stone-50 px-8 py-3 rounded-sm text-lg font-light hover:bg-stone-800 transition-all duration-300 transform hover:scale-105 animate-fade-in"
           style={{ animationDelay: '0.6s' }}
         >
-          View Our Work
+          Explore Our Services
         </button>
       </div>
       

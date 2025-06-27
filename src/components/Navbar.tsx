@@ -1,10 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +18,12 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home first
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -29,17 +37,23 @@ const Navbar = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-light text-stone-800 tracking-wider">
+          <Link to="/" className="text-2xl font-light text-stone-800 tracking-wider">
             Wedding<span className="font-medium">Lens</span>
-          </div>
+          </Link>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <button 
-              onClick={() => scrollToSection('home')}
+            <Link 
+              to="/"
               className="text-stone-700 hover:text-stone-900 transition-colors duration-200 font-light"
             >
               Home
+            </Link>
+            <button 
+              onClick={() => scrollToSection('services')}
+              className="text-stone-700 hover:text-stone-900 transition-colors duration-200 font-light"
+            >
+              Services
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
@@ -47,18 +61,18 @@ const Navbar = () => {
             >
               Portfolio
             </button>
-            <button 
-              onClick={() => scrollToSection('about')}
+            <Link 
+              to="/about"
               className="text-stone-700 hover:text-stone-900 transition-colors duration-200 font-light"
             >
               About
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
+            </Link>
+            <Link 
+              to="/contact"
               className="text-stone-700 hover:text-stone-900 transition-colors duration-200 font-light"
             >
               Contact
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -74,11 +88,18 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden bg-stone-50/95 backdrop-blur-sm rounded-lg mt-2 py-4">
             <div className="flex flex-col space-y-4 px-4">
-              <button 
-                onClick={() => scrollToSection('home')}
+              <Link 
+                to="/"
                 className="text-stone-700 hover:text-stone-900 transition-colors duration-200 text-left font-light"
+                onClick={() => setIsOpen(false)}
               >
                 Home
+              </Link>
+              <button 
+                onClick={() => scrollToSection('services')}
+                className="text-stone-700 hover:text-stone-900 transition-colors duration-200 text-left font-light"
+              >
+                Services
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
@@ -86,18 +107,20 @@ const Navbar = () => {
               >
                 Portfolio
               </button>
-              <button 
-                onClick={() => scrollToSection('about')}
+              <Link 
+                to="/about"
                 className="text-stone-700 hover:text-stone-900 transition-colors duration-200 text-left font-light"
+                onClick={() => setIsOpen(false)}
               >
                 About
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
+              </Link>
+              <Link 
+                to="/contact"
                 className="text-stone-700 hover:text-stone-900 transition-colors duration-200 text-left font-light"
+                onClick={() => setIsOpen(false)}
               >
                 Contact
-              </button>
+              </Link>
             </div>
           </div>
         )}
