@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import {
   Carousel,
@@ -76,6 +75,62 @@ const Portfolio = () => {
       src: '/lovable-uploads/9bef5ebc-a5aa-48e1-98a2-62b3ad5e02d7.png',
       title: 'Sacred Vows',
       description: 'Promises made under nature\'s blessing'
+    },
+    {
+      id: 9,
+      category: 'ceremony',
+      src: '/lovable-uploads/1c2c74b4-7fed-4064-834d-d3844d9448c6.png',
+      title: 'Radiant Bride',
+      description: 'Glowing with happiness and tradition'
+    },
+    {
+      id: 10,
+      category: 'ceremony',
+      src: '/lovable-uploads/ed1c71dd-5d56-45f1-b08b-29531786852d.png',
+      title: 'Joyful Moments',
+      description: 'Sharing laughter during the ceremony'
+    },
+    {
+      id: 11,
+      category: 'ceremony',
+      src: '/lovable-uploads/bfd6e606-1fca-4913-a83d-9a4a99b41d98.png',
+      title: 'Sacred Bonds',
+      description: 'Intimate moments during the rituals'
+    },
+    {
+      id: 12,
+      category: 'ceremony',
+      src: '/lovable-uploads/ba55e72f-4541-4185-9c0d-35ba855212e7.png',
+      title: 'Family Celebration',
+      description: 'Loved ones joining in the festivities'
+    },
+    {
+      id: 13,
+      category: 'ceremony',
+      src: '/lovable-uploads/67477bba-62be-4ffd-9980-b21986ab46b7.png',
+      title: 'Sacred Fire',
+      description: 'Traditional ceremony around the sacred fire'
+    },
+    {
+      id: 14,
+      category: 'engagement',
+      src: '/lovable-uploads/e2188e1c-07cd-48e4-909b-8944a40b628d.png',
+      title: 'Elegant Portrait',
+      description: 'Sophisticated pre-wedding styling'
+    },
+    {
+      id: 15,
+      category: 'reception',
+      src: '/lovable-uploads/16229d41-ccb7-4571-b842-2cb8723d98ec.png',
+      title: 'Elder Blessings',
+      description: 'Grandmothers sharing their wisdom'
+    },
+    {
+      id: 16,
+      category: 'details',
+      src: '/lovable-uploads/bffee3a0-1752-47e7-ac96-49ae289e5cb3.png',
+      title: 'Captured Moments',
+      description: 'Modern touches in traditional ceremonies'
     }
   ];
 
