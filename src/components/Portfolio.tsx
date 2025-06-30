@@ -23,59 +23,59 @@ const Portfolio = () => {
   const photos = [
     {
       id: 1,
-      category: 'ceremony',
-      src: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Sacred Vows',
-      description: 'Capturing the most intimate moments of your ceremony'
+      category: 'engagement',
+      src: '/lovable-uploads/77c8da1c-5163-44fe-b650-2a2106d585ad.png',
+      title: 'Perfect Harmony',
+      description: 'Beautiful moments before the big day'
     },
     {
       id: 2,
       category: 'engagement',
-      src: 'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Golden Hour Love',
-      description: 'Pre-wedding magic in the perfect light'
+      src: '/lovable-uploads/a7593116-39db-4041-b72c-5a047d95aa95.png',
+      title: 'Love in Nature',
+      description: 'Capturing pure joy and connection'
     },
     {
       id: 3,
       category: 'reception',
-      src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'First Dance',
-      description: 'Dancing into forever together'
+      src: '/lovable-uploads/56b00d9d-083a-40f3-b3e0-d96b857e8d34.png',
+      title: 'Celebration of Joy',
+      description: 'Friends and family sharing the happiness'
     },
     {
       id: 4,
-      category: 'details',
-      src: 'https://images.unsplash.com/photo-1550005809-91ad75fb315f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Wedding Rings',
-      description: 'The little details that tell your story'
+      category: 'ceremony',
+      src: '/lovable-uploads/0a25f5fd-e755-43c8-bb5b-0825470bd5bd.png',
+      title: 'Sacred Rituals',
+      description: 'Traditional ceremonies filled with meaning'
     },
     {
       id: 5,
       category: 'ceremony',
-      src: 'https://images.unsplash.com/photo-1594736797933-d0e501ba2fe6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Walking Down the Aisle',
-      description: 'The moment everything begins'
+      src: '/lovable-uploads/3d3cd3c3-8395-434d-a189-cdf1f32941c1.png',
+      title: 'Walking Together',
+      description: 'The journey begins as one'
     },
     {
       id: 6,
-      category: 'reception',
-      src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Celebration',
-      description: 'Joy and laughter filling the air'
+      category: 'ceremony',
+      src: '/lovable-uploads/aeec02f2-2164-4c9c-8a87-ef3da357cd88.png',
+      title: 'Groom Portrait',
+      description: 'Handsome in traditional attire'
     },
     {
       id: 7,
-      category: 'details',
-      src: 'https://images.unsplash.com/photo-1460978812857-470ed1c77af0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Wedding Bouquet',
-      description: 'Beauty in every petal'
+      category: 'ceremony',
+      src: '/lovable-uploads/0aa3dca9-6e69-431c-a5b4-d8362d785ac9.png',
+      title: 'Blessed Union',
+      description: 'Two hearts becoming one'
     },
     {
       id: 8,
-      category: 'engagement',
-      src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Romantic Moments',
-      description: 'Love captured in its purest form'
+      category: 'ceremony',
+      src: '/lovable-uploads/9bef5ebc-a5aa-48e1-98a2-62b3ad5e02d7.png',
+      title: 'Sacred Vows',
+      description: 'Promises made under nature\'s blessing'
     }
   ];
 
