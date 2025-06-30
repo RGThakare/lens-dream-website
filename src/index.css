@@ -121,20 +121,37 @@
   opacity: 0;
 }
 
-/* Smooth scrolling for webkit browsers */
+/* Responsive scrollbar styles - much thinner on mobile */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 3px; /* Much thinner for mobile */
+}
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px; /* Slightly wider on desktop */
+  }
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937;
+  background: rgba(120, 113, 108, 0.1); /* More subtle stone color */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f59e0b;
-  border-radius: 4px;
+  background: rgba(120, 113, 108, 0.3); /* Subtle stone color instead of bright yellow */
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d97706;
+  background: rgba(120, 113, 108, 0.5); /* Darker on hover */
+}
+
+/* Hide scrollbar on mobile for better UX */
+@media (max-width: 767px) {
+  ::-webkit-scrollbar {
+    width: 2px; /* Very thin on mobile */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(120, 113, 108, 0.2); /* Even more subtle on mobile */
+  }
 }
