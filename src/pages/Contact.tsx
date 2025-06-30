@@ -54,7 +54,7 @@ const Contact = () => {
                     <span className="mr-2">📧</span>
                     Email
                   </h3>
-                  <p className="text-stone-600 font-light">hello@weddinglens.com</p>
+                  <p className="text-stone-600 font-light">hello@darklightwedding.com</p>
                 </div>
                 
                 <div className="bg-stone-50 p-5 rounded border-l-4 border-red-500">
@@ -71,12 +71,12 @@ const Contact = () => {
                     Instagram
                   </h3>
                   <a 
-                    href="https://instagram.com/weddinglens_photography" 
+                    href="https://www.instagram.com/darklight_weddings.in" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-stone-600 font-light hover:text-amber-600 transition-colors"
                   >
-                    @weddinglens_photography
+                    @darklight_weddings.in
                   </a>
                 </div>
                 

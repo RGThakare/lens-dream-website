@@ -9,24 +9,24 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-stone-50 mb-4 md:mb-0">
             <span className="text-2xl font-light tracking-wider">
-              Wedding<span className="font-medium">Lens</span>
+              Darklight<span className="font-medium">Wedding</span>
             </span>
           </div>
           
           <div className="flex items-center space-x-6 mb-4 md:mb-0">
             <a 
-              href="https://instagram.com/weddinglens_photography" 
+              href="https://www.instagram.com/darklight_weddings.in" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-stone-300 hover:text-amber-400 transition-colors duration-200"
             >
               <Instagram size={20} />
-              <span className="font-light">@weddinglens_photography</span>
+              <span className="font-light">@darklight_weddings.in</span>
             </a>
           </div>
           
           <div className="text-stone-300 text-center md:text-right">
-            <p className="font-light">&copy; 2024 WeddingLens Photography. All rights reserved.</p>
+            <p className="font-light">&copy; 2024 Darklight Wedding Photography. All rights reserved.</p>
             <p className="text-sm mt-1 font-light">Capturing love stories, one moment at a time.</p>
           </div>
         </div>
