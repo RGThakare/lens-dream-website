@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Instagram } from 'lucide-react';
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -62,13 +63,28 @@ const Contact = () => {
               
               <div className="bg-stone-50 p-4 rounded border-l-4 border-amber-500">
                 <h4 className="text-stone-700 font-medium mb-2 flex items-center">
+                  <Instagram className="mr-2" size={16} />
+                  Instagram
+                </h4>
+                <a 
+                  href="https://instagram.com/weddinglens_photography" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-stone-600 font-light hover:text-amber-600 transition-colors"
+                >
+                  @weddinglens_photography
+                </a>
+              </div>
+              
+              <div className="bg-stone-50 p-4 rounded border-l-4 border-red-500">
+                <h4 className="text-stone-700 font-medium mb-2 flex items-center">
                   <span className="mr-2">📍</span>
                   Location
                 </h4>
                 <p className="text-stone-600 font-light">Maharashtra & Pan-India</p>
               </div>
               
-              <div className="bg-stone-50 p-4 rounded border-l-4 border-red-500">
+              <div className="bg-stone-50 p-4 rounded border-l-4 border-amber-500">
                 <h4 className="text-stone-700 font-medium mb-2 flex items-center">
                   <span className="mr-2">⏰</span>
                   Response Time

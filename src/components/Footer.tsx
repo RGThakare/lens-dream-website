@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -10,6 +11,18 @@ const Footer = () => {
             <span className="text-2xl font-light tracking-wider">
               Wedding<span className="font-medium">Lens</span>
             </span>
+          </div>
+          
+          <div className="flex items-center space-x-6 mb-4 md:mb-0">
+            <a 
+              href="https://instagram.com/weddinglens_photography" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 text-stone-300 hover:text-amber-400 transition-colors duration-200"
+            >
+              <Instagram size={20} />
+              <span className="font-light">@weddinglens_photography</span>
+            </a>
           </div>
           
           <div className="text-stone-300 text-center md:text-right">
