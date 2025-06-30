@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -79,9 +79,23 @@ const Portfolio = () => {
     }
   ];
 
-  const filteredPhotos = activeCategory === 'all' 
-    ? photos 
-    : photos.filter(photo => photo.category === activeCategory);
+  // Shuffle function
+  const shuffleArray = (array: typeof photos) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  // Memoized shuffled and filtered photos
+  const filteredPhotos = useMemo(() => {
+    const filtered = activeCategory === 'all' 
+      ? photos 
+      : photos.filter(photo => photo.category === activeCategory);
+    return shuffleArray(filtered);
+  }, [activeCategory]);
 
   // Featured photo (first one) for hero-style display
   const featuredPhoto = filteredPhotos[0];
