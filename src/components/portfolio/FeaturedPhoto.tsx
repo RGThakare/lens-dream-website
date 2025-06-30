@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Photo } from '@/data/portfolioData';
+import LazyImage from './LazyImage';
 
 interface FeaturedPhotoProps {
   photo: Photo;
@@ -13,11 +14,12 @@ const FeaturedPhoto: React.FC<FeaturedPhotoProps> = ({ photo }) => {
       <Card className="overflow-hidden border-0 shadow-2xl bg-stone-100">
         <CardContent className="p-0">
           <div className="grid md:grid-cols-2 gap-0">
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <img
+            <div className="relative">
+              <LazyImage
                 src={photo.src}
                 alt={photo.title}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                aspectRatio="aspect-[4/3]"
+                className="hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-stone-900/20 to-transparent"></div>
             </div>

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { photos, categories } from '@/data/portfolioData';
 import CategoryFilter from '@/components/portfolio/CategoryFilter';
+import LazyImage from '@/components/portfolio/LazyImage';
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -54,11 +55,12 @@ const Gallery = () => {
           {filteredPhotos.map((photo) => (
             <Card key={photo.id} className="border-0 shadow-lg overflow-hidden bg-stone-100 hover:shadow-xl transition-shadow duration-300 relative">
               <CardContent className="p-0">
-                <div className="relative aspect-[4/3] overflow-hidden group">
-                  <img
+                <div className="relative group">
+                  <LazyImage
                     src={photo.src}
                     alt={photo.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    aspectRatio="aspect-[4/3]"
+                    className="group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-stone-800/0 group-hover:bg-stone-800/20 transition-colors duration-300"></div>
                   {/* Traditional corner decoration */}
