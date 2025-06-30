@@ -1,5 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { photos, categories } from '@/data/portfolioData';
 import CategoryFilter from './portfolio/CategoryFilter';
 import FeaturedPhoto from './portfolio/FeaturedPhoto';
@@ -57,9 +58,12 @@ const Portfolio = () => {
           <p className="text-stone-600 font-light mb-6">
             Ready to create your own unforgettable moments?
           </p>
-          <button className="bg-stone-700 text-stone-50 px-8 py-3 rounded-sm font-light hover:bg-stone-800 transition-colors duration-300">
+          <Link 
+            to="/gallery"
+            className="bg-stone-700 text-stone-50 px-8 py-3 rounded-sm font-light hover:bg-stone-800 transition-colors duration-300 inline-block"
+          >
             View Full Gallery
-          </button>
+          </Link>
         </div>
       </div>
     </section>
