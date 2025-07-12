@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { photos, categories } from '@/data/portfolioData';
 import LazyImage from '@/components/portfolio/LazyImage';
+import PhotoLightbox from '@/components/portfolio/PhotoLightbox';
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft } from 'lucide-react';
 
 const SectionPage = () => {
   const { sectionId } = useParams();
+  const [lightboxIndex, setLightboxIndex] = useState<number>(-1);
   
   const category = categories.find(cat => cat.id === sectionId);
   const sectionPhotos = photos.filter(photo => photo.category === sectionId);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+  };
+
+  const closeLightbox = () => {
+    setLightboxIndex(-1);
+  };
 
   if (!category) {
     return (
@@ -76,17 +86,24 @@ const SectionPage = () => {
 
         {/* Photo Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sectionPhotos.map((photo) => (
+          {sectionPhotos.map((photo, index) => (
             <Card key={photo.id} className="border-0 shadow-lg overflow-hidden bg-stone-100 hover:shadow-xl transition-shadow duration-300 relative">
               <CardContent className="p-0">
-                <div className="relative group">
+                <div 
+                  className="relative group cursor-pointer"
+                  onClick={() => openLightbox(index)}
+                >
                   <LazyImage
                     src={photo.src}
                     alt={photo.title}
                     aspectRatio="aspect-[4/3]"
                     className="group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-stone-800/0 group-hover:bg-stone-800/20 transition-colors duration-300"></div>
+                  <div className="absolute inset-0 bg-stone-800/0 group-hover:bg-stone-800/20 transition-colors duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-lg font-light">
+                      Click to view
+                    </div>
+                  </div>
                   {/* Traditional corner decoration */}
                   <div className="absolute top-2 right-2 text-amber-500 opacity-60 text-sm">
                     ✨
@@ -120,6 +137,15 @@ const SectionPage = () => {
             </p>
           </div>
         )}
+
+        {/* Photo Lightbox */}
+        <PhotoLightbox
+          photos={sectionPhotos}
+          currentIndex={lightboxIndex}
+          isOpen={lightboxIndex >= 0}
+          onClose={closeLightbox}
+          onNavigate={setLightboxIndex}
+        />
       </div>
       
       {/* Bottom decorative border */}
