@@ -37,24 +37,22 @@ const LazyImage: React.FC<LazyImageProps> = ({
   }, []);
 
   return (
-    <div ref={imgRef} className={`${aspectRatio} ${className} relative overflow-hidden`}>
-      {/* Loading placeholder */}
-      <div className={`absolute inset-0 bg-stone-200 animate-pulse transition-opacity duration-300 ${
-        isLoaded ? 'opacity-0' : 'opacity-100'
-      }`}>
-        <div className="absolute inset-0 flex items-center justify-center">
+    <div ref={imgRef} className={`${aspectRatio} ${className} relative overflow-hidden bg-stone-200`}>
+      {/* Loading placeholder - only show when not loaded */}
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-stone-200 flex items-center justify-center">
           <div className="text-stone-400 text-2xl">📸</div>
         </div>
-      </div>
+      )}
       
       {/* Actual image */}
       {isInView && (
         <img
           src={src}
           alt={alt}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
-          } ${className}`}
+          }`}
           onLoad={() => setIsLoaded(true)}
           loading="lazy"
         />
