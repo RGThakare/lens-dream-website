@@ -60,7 +60,7 @@ const PhotoLightbox: React.FC<PhotoLightboxProps> = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-7xl w-full h-[90vh] p-0 bg-black/95 border-0">
+      <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 bg-black/95 border-0 overflow-hidden">
         <div className="relative w-full h-full flex items-center justify-center">
           {/* Close button */}
           <Button
@@ -95,7 +95,7 @@ const PhotoLightbox: React.FC<PhotoLightboxProps> = ({
           </Button>
 
           {/* Main image */}
-          <div className="w-full h-full flex items-center justify-center p-8">
+          <div className="absolute inset-0 flex items-center justify-center" style={{ padding: '80px 120px 120px 120px' }}>
             <img
               src={currentPhoto.src}
               alt={currentPhoto.title}
