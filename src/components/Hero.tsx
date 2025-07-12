@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -85,12 +86,12 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
           
-          <button 
-            onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+          <Link 
+            to="/gallery"
             className="border-2 border-stone-700 text-stone-700 px-10 py-4 rounded-full text-lg font-light hover:bg-stone-700 hover:text-white transition-all duration-300 transform hover:scale-105 bg-white/80 backdrop-blur-sm"
           >
             View Portfolio
-          </button>
+          </Link>
         </div>
       </div>
       

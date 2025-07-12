@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Camera, Heart, Image, Sparkles, Crown, Users } from 'lucide-react';
 
 const Services = () => {
@@ -144,9 +145,12 @@ const Services = () => {
             <p className="text-stone-600 font-light mb-6 italic">
               "शुभ विवाह - जीवन का सबसे सुंदर क्षण"
             </p>
-            <button className="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-3 rounded-full font-light hover:from-amber-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <Link 
+              to="/contact"
+              className="inline-block bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-3 rounded-full font-light hover:from-amber-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
               Book Your Session
-            </button>
+            </Link>
           </div>
         </div>
       </div>

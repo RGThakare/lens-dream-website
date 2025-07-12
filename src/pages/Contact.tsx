@@ -146,6 +146,24 @@ const Contact = () => {
                 </div>
                 
                 <div>
+                  <label htmlFor="service" className="block text-stone-700 font-medium mb-2">
+                    सेवा / Service Interested In
+                  </label>
+                  <select
+                    id="service"
+                    required
+                    className="w-full px-4 py-3 bg-stone-50 border border-stone-300 text-stone-800 focus:outline-none focus:border-amber-500 transition-colors font-light rounded"
+                  >
+                    <option value="">Select a service</option>
+                    <option value="wedding">Wedding Photography</option>
+                    <option value="prewedding">Pre-Wedding Shoot</option>
+                    <option value="reception">Reception Coverage</option>
+                    <option value="haldi">Haldi Ceremony</option>
+                    <option value="complete">Complete Package</option>
+                  </select>
+                </div>
+                
+                <div>
                   <label htmlFor="wedding-date" className="block text-stone-700 font-medium mb-2">
                     विवाह दिनांक / Wedding Date
                   </label>
@@ -154,6 +172,23 @@ const Contact = () => {
                     id="wedding-date"
                     className="w-full px-4 py-3 bg-stone-50 border border-stone-300 text-stone-800 focus:outline-none focus:border-amber-500 transition-colors font-light rounded"
                   />
+                </div>
+                
+                <div>
+                  <label htmlFor="budget" className="block text-stone-700 font-medium mb-2">
+                    अंदाजपत्रक / Budget Range
+                  </label>
+                  <select
+                    id="budget"
+                    className="w-full px-4 py-3 bg-stone-50 border border-stone-300 text-stone-800 focus:outline-none focus:border-amber-500 transition-colors font-light rounded"
+                  >
+                    <option value="">Select budget range</option>
+                    <option value="under-50k">Under ₹50,000</option>
+                    <option value="50k-1l">₹50,000 - ₹1,00,000</option>
+                    <option value="1l-2l">₹1,00,000 - ₹2,00,000</option>
+                    <option value="above-2l">Above ₹2,00,000</option>
+                    <option value="discuss">Let's discuss</option>
+                  </select>
                 </div>
                 
                 <div>
