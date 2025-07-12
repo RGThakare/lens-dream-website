@@ -44,6 +44,12 @@ export const categories: Category[] = [
     name: 'Haldi',
     description: 'Traditional pre-wedding rituals',
     story: 'Haldi ceremony photography celebrates one of the most vibrant and joyful pre-wedding traditions. The golden turmeric paste, applied with love by family and friends, creates beautiful, candid moments filled with laughter and blessings. These images capture the warmth of family bonds, the playful interactions, and the rich cultural significance of this auspicious ritual that brings good luck and purification before the wedding.'
+  },
+  { 
+    id: 'family', 
+    name: 'Family',
+    description: 'Precious family moments',
+    story: 'Family photography captures the essence of love, connection, and togetherness that binds generations. These portraits showcase the beautiful relationships between family members, from intimate moments between parents and children to multi-generational gatherings. Each image tells a story of heritage, love, and the precious bonds that make a family unique and special.'
   }
 ];
 
@@ -159,5 +165,12 @@ export const photos: Photo[] = [
     src: '/lovable-uploads/bffee3a0-1752-47e7-ac96-49ae289e5cb3.png',
     title: 'Golden Blessings',
     description: 'Traditional haldi ceremony moments'
+  },
+  {
+    id: 17,
+    category: 'family',
+    src: 'https://res.cloudinary.com/db2gpb7pw/image/upload/v1752352276/PMP00809_copy-min_idqatu.jpg',
+    title: 'Family Portrait',
+    description: 'Beautiful family moments captured with love'
   }
 ];
