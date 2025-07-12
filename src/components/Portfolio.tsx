@@ -1,35 +1,17 @@
 
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { photos, categories } from '@/data/portfolioData';
-import CategoryFilter from './portfolio/CategoryFilter';
-import FeaturedPhoto from './portfolio/FeaturedPhoto';
-import PhotoCarousel from './portfolio/PhotoCarousel';
+import SectionPreview from './portfolio/SectionPreview';
 
 const Portfolio = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-
-  // Shuffle function
-  const shuffleArray = (array: typeof photos) => {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
+  // Get sections (excluding 'all')
+  const sections = categories.filter(cat => cat.id !== 'all');
+  
+  // Get photos for each section
+  const getPhotosForSection = (sectionId: string) => {
+    return photos.filter(photo => photo.category === sectionId);
   };
-
-  // Memoized shuffled and filtered photos
-  const filteredPhotos = useMemo(() => {
-    const filtered = activeCategory === 'all' 
-      ? photos 
-      : photos.filter(photo => photo.category === activeCategory);
-    return shuffleArray(filtered);
-  }, [activeCategory]);
-
-  // Featured photo (first one) for hero-style display
-  const featuredPhoto = filteredPhotos[0];
-  const galleryPhotos = filteredPhotos.slice(1);
 
   return (
     <section id="portfolio" className="py-20 bg-stone-50 relative">
@@ -51,15 +33,16 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <CategoryFilter 
-          categories={categories}
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-        />
-
-        {featuredPhoto && <FeaturedPhoto photo={featuredPhoto} />}
-
-        <PhotoCarousel photos={galleryPhotos} />
+        {/* Section Previews */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {sections.map((section) => (
+            <SectionPreview
+              key={section.id}
+              category={section}
+              photos={getPhotosForSection(section.id)}
+            />
+          ))}
+        </div>
 
         {/* Call to Action with traditional elements */}
         <div className="text-center mt-16 relative">
